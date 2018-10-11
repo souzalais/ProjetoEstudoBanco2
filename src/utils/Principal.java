@@ -13,8 +13,8 @@ public class Principal {
 		PessoaDAO pDao = new PessoaDAO();
 		//pDao.adicionar(p);
 		
-		//pDao.buscarPorNome("M");
-		pDao.buscarPorRg(12819);
+		pDao.buscarPorNome("M");
+		//pDao.buscarPorRg(12819);
 	}
 
 }

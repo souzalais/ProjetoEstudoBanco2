@@ -84,12 +84,12 @@ public class PessoaDAO implements InterfacePessoaDAO {
 	}
 
 	public ArrayList<Pessoa> buscarPorNome(String nome) {
-		String sql = "select * from pessoas where nome = ?";
+		String sql = "select * from pessoas where nome like ?";
 		PreparedStatement ps;
 		ArrayList<Pessoa> pessoa = new ArrayList<Pessoa>();
 		try (Connection conn = new ConnectionFactory().getConnection()) {
 			ps = conn.prepareStatement(sql);
-			ps.setString(1,nome);
+			ps.setString(1,nome+"%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Pessoa p1 = new Pessoa();
